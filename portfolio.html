@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Netflix Sans';
+            src: url('https://path-to-netflix-sans.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            src: url('https://path-to-roboto.woff2') format('woff2');
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(90deg, #4f46e5, #3b82f6, #2563eb);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 30px;
+            background: inherit;
+        }
+
+        .header-nav a {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: #93c5fd;
+        }
+
+        .main-banner {
+            text-align: center;
+            padding: 10vh 20px;
+            color: white;
+        }
+
+        .main-banner h2 {
+            font-family: 'Netflix Sans', Arial, sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .arrow-animation {
+            margin: 20px auto;
+            width: 30px;
+            height: 30px;
+            border-left: 5px solid white;
+            border-bottom: 5px solid white;
+            transform: rotate(-45deg);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            50% {
+                transform: translateY(10px) rotate(-45deg);
+            }
+        }
+
+        .main-banner p {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.2rem;
+            margin: 60px auto 30px;
+            max-width: 700px;
+            text-align: center;
+            letter-spacing: 0.12em;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 20px;
+        }
+
+        .feature {
+            flex: 1 1 320px;
+            margin: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-family: 'Netflix Sans', Arial, sans-serif;
+        }
+
+        .feature h4, .feature p {
+            font-family: 'Roboto', Arial, sans-serif;
+            letter-spacing: 0.12em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        footer a {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #e0f2fe;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #93c5fd;
+        }
+
+        .additional-features {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 20px;
+        }
+
+        .additional-feature {
+            flex: 1 1 320px;
+            margin: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .additional-feature:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .additional-feature .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #2563eb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-family: 'Netflix Sans', Arial, sans-serif;
+        }
+
+        .warming-up {
+            text-align: center;
+            margin: 30px auto;
+            color: white;
+        }
+
+        .warming-up h2 {
+            font-family: 'Netflix Sans', Arial, sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+        }
+		.warming-up h3 {
+            font-family: font-family: 'Netflix Sans', Arial, sans-serif;
+            font-size: 4.5rem;
+            font-weight: 750;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-nav">
+        <a href="https://www.linkedin.com/in/abdullahans/">LinkedIn</a>
+        <a href="mailto:a.ansariprofessional@gmail.com">Email</a>
+    </header>
+
+    <div class="main-banner">
+        <h2>Am I Your Next Sales Rockstar?</h2>
+        <div class="arrow-animation"></div>
+        <p>Motivated, resourceful, and a proven achiever with a knack for problem-solving and exceeding expectations.</p>
+    </div>
+
+    <section class="features" id="features">
+        <div class="feature">
+            <div class="icon">🎯</div>
+            <h4>Coachable</h4>
+            <p>I believe there’s always more to learn and love working alongside highly skilled professionals to improve every day.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🤝</div>
+            <h4>Relationship Builder</h4>
+            <p>I thrive on helping clients achieve their goals, building trust, and forging lasting partnerships.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🚀</div>
+            <h4>Tech-Savvy Innovator</h4>
+            <p>Expertise in leveraging AI and cutting-edge tools to streamline processes and drive efficiency in sales operations.</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature">
+            <div class="icon">📊</div>
+            <h4>Data-Driven</h4>
+            <p>I prefer making informed decisions based on research and data, ensuring every strategy is backed by proven insights.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">✨</div>
+            <h4>Hyper-Creative</h4>
+            <p>New ideas excite me, and I embrace creative solutions. Fun fact: even this website was designed by me!</p>
+        </div>
+    </section>
+
+    <div class="arrow-animation" style="margin: 50px auto;"></div>
+
+    <div class="warming-up">
+        <h2> Let's learn about my experience. </h2>
+    </div>
+	
+	<div class="arrow-animation" style="margin: 50px auto;"></div>
+
+<section class="features" id="features">
+        <div class="feature">
+            <div class="icon">📈</div>
+            <h4>Lead Generation.</h4>
+            <p>I've assisted companies with lead generation, helping them see >175% boost in pipeline volume.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🗝️</div>
+            <h4>Qualifications</h4>
+            <p>Qualified hundreds of leads based on several parameters, such as company age, revenue, location, etc.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">❄️</div>
+            <h4>Cold Calls</h4>
+            <p>Carried out several hundred cold calls in my previous roles, focusing on delivering value in the most succinct way.</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature">
+            <div class="icon">⚙️</div>
+            <h4>Outreach Design</h4>
+            <p>Developed a basic yet effective outreach system, employing Apollo.io, Instantly.AI, GPT, and Linkedin. </p>
+        </div>
+        <div class="feature">
+            <div class="icon">🎨</div>
+            <h4>Content Design</h4>
+            <p>Because of my inclination towards everything creative, I also contributed to brand and marketing efforts, creating visuals for linkedin, and writing blog posts.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Abdullah Ansari. All rights reserved. | <a href="mailto:a.ansariprofessional@gmail.com">Contact Me</a></p>
+
+
+    </footer>
+</body>
+</html>
