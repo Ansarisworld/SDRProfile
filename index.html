@@ -12,7 +12,7 @@
         }
 
         @font-face {
-            font-family: 'Montserrat';
+            font-family: 'Netflix Sans';
             src: url('https://path-to-netflix-sans.woff2') format('woff2');
         }
 
@@ -28,9 +28,9 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(90deg, #625bde, #3b82f6, #2563eb);
+            background: linear-gradient(90deg, #4f46e5, #3b82f6, #2563eb);
             background-size: 400% 400%;
-            animation: gradientAnimation 7s ease infinite;
+            animation: gradientAnimation 10s ease infinite;
         }
 
         @keyframes gradientAnimation {
@@ -74,8 +74,8 @@
         }
 
         .main-banner h2 {
-            font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 4.3rem;
+            font-family: 'Netflix Sans', Arial, sans-serif;
+            font-size: 4.5rem;
             margin-bottom: 20px;
             font-weight: 800;
         }
@@ -157,7 +157,7 @@
             align-items: center;
             border-radius: 50%;
             font-size: 1.8rem;
-            font-family: 'Montserrat', Arial, sans-serif;
+            font-family: 'Netflix Sans', Arial, sans-serif;
         }
 
         .feature h4, .feature p {
@@ -188,9 +188,64 @@
         }
 
         .warming-up h2 {
-            font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 4.3rem;
+            font-family: 'Netflix Sans', Arial, sans-serif;
+            font-size: 4.5rem;
             font-weight: 800;
+        }
+
+        .popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        .popup-form h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .popup-form p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.12em;
+        }
+
+        .popup-form button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+        }
+
+        .popup-form button:hover {
+            background: #3b82f6;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
     </style>
 </head>
@@ -210,7 +265,7 @@
         <div class="feature">
             <div class="icon">🎯</div>
             <h4>Coachable</h4>
-            <p>I believe there’s always more to learn and love working alongside highly skilled professionals to improve every single day.</p>
+            <p>I believe there’s always more to learn and love working alongside highly skilled professionals to improve every day.</p>
         </div>
         <div class="feature">
             <div class="icon">🤝</div>
@@ -233,7 +288,7 @@
         <div class="feature">
             <div class="icon">✨</div>
             <h4>Hyper-Creative</h4>
-            <p>New ideas excite me, and I enjoy thinking outside the box! As proof of my creative prowess, I designed this website! </p>
+            <p>New ideas excite me, and I embrace creative solutions. Fun fact: even this website was designed by me!</p>
         </div>
     </section>
 
@@ -256,13 +311,13 @@
         </div>
         <div class="feature">
             <div class="icon">❄️</div>
-            <h4>Cold Calls</h4>
+            <h4>Cold Calls </h4>
             <p>Carried out several hundred cold calls in my previous roles, focusing on delivering value in the most succinct way.</p>
         </div>
     </section>
 
     <section class="features" id="features">
-        <div class="feature">
+        <div class="feature"> 
             <div class="icon">⚙️</div>
             <h4>Outreach Design</h4>
             <p>Developed a basic yet effective outreach system, employing Apollo.io, Instantly.AI, GPT, and LinkedIn.</p>
