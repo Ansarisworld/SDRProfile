@@ -110,15 +110,13 @@
 
         .features {
             display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 10px 20px;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
         }
 
         .feature {
-            flex: 1 1 320px;
-            margin: 10px;
+            width: 100%;
             padding: 20px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
@@ -129,8 +127,22 @@
             overflow: hidden;
         }
 
+        @media (min-width: 768px) {
+            .features {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .feature {
+                flex: 1 1 calc(33.333% - 40px);
+                max-width: 320px;
+            }
+        }
+
         .feature:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
         }
 
@@ -169,46 +181,6 @@
             color: #93c5fd;
         }
 
-        .additional-features {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 10px 20px;
-        }
-
-        .additional-feature {
-            flex: 1 1 320px;
-            margin: 10px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .additional-feature:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .additional-feature .icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: #2563eb;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 1.8rem;
-            font-family: 'Netflix Sans', Arial, sans-serif;
-        }
-
         .warming-up {
             text-align: center;
             margin: 30px auto;
@@ -219,11 +191,6 @@
             font-family: 'Netflix Sans', Arial, sans-serif;
             font-size: 4.5rem;
             font-weight: 800;
-        }
-		.warming-up h3 {
-            font-family: font-family: 'Netflix Sans', Arial, sans-serif;
-            font-size: 4.5rem;
-            font-weight: 750;
         }
     </style>
 </head>
@@ -273,15 +240,13 @@
     <div class="arrow-animation" style="margin: 50px auto;"></div>
 
     <div class="warming-up">
-        <h2> Let's learn about my experience. </h2>
+        <h2>Let's learn about my experience.</h2>
     </div>
-	
-	<div class="arrow-animation" style="margin: 50px auto;"></div>
 
-<section class="features" id="features">
+    <section class="features" id="features">
         <div class="feature">
             <div class="icon">📈</div>
-            <h4>Lead Generation.</h4>
+            <h4>Lead Generation</h4>
             <p>I've assisted companies with lead generation, helping them see >175% boost in pipeline volume.</p>
         </div>
         <div class="feature">
@@ -300,19 +265,17 @@
         <div class="feature">
             <div class="icon">⚙️</div>
             <h4>Outreach Design</h4>
-            <p>Developed a basic yet effective outreach system, employing Apollo.io, Instantly.AI, GPT, and Linkedin. </p>
+            <p>Developed a basic yet effective outreach system, employing Apollo.io, Instantly.AI, GPT, and LinkedIn.</p>
         </div>
         <div class="feature">
             <div class="icon">🎨</div>
             <h4>Content Design</h4>
-            <p>Because of my inclination towards everything creative, I also contributed to brand and marketing efforts, creating visuals for linkedin, and writing blog posts.</p>
+            <p>Because of my inclination towards everything creative, I also contributed to brand and marketing efforts, creating visuals for LinkedIn and writing blog posts.</p>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Abdullah Ansari. All rights reserved. | <a href="mailto:a.ansariprofessional@gmail.com">Contact Me</a></p>
-
-
     </footer>
 </body>
 </html>
