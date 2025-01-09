@@ -193,63 +193,33 @@
             font-weight: 800;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 800px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            z-index: 1000;
-        }
-
-        .modal-header {
+        .play-button {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #2563eb;
-            color: white;
+            margin: 30px auto;
         }
 
-        .modal-header h2 {
-            font-size: 1.5rem;
+        .play-button a {
+            font-size: 3rem;
+            text-decoration: none;
+            color: #2563eb;
+            animation: pulse 1.5s infinite;
         }
 
-        .modal-header button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .modal-content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .modal-content video {
-            width: 100%;
-            max-height: 400px;
-            border-radius: 10px;
-        }
-
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -269,7 +239,7 @@
         <div class="feature">
             <div class="icon">🎯</div>
             <h4>Coachable</h4>
-            <p>I believe there’s always more to learn, and love working alongside highly skilled professionals to improve every single day.</p>
+            <p>I believe there’s always more to learn and love working alongside highly skilled professionals to improve every single day.</p>
         </div>
         <div class="feature">
             <div class="icon">🤝</div>
@@ -309,7 +279,7 @@
             <p>I've assisted companies with lead generation, helping them see >175% boost in pipeline volume.</p>
         </div>
         <div class="feature">
-            <div class="icon">🚙</div>
+            <div class="icon">🤔</div>
             <h4>Qualifications</h4>
             <p>Qualified hundreds of leads based on several parameters, such as company age, revenue, location, etc.</p>
         </div>
@@ -338,48 +308,12 @@
         </div>
     </section>
 
+    <div class="play-button">
+        <a href="https://www.loom.com/share/d3cd56bf08c742eca11434b021e7e887?sid=13fe0d04-84a7-4462-973e-508c6cee6dc9" target="_blank">▶️</a>
+    </div>
+
     <footer>
         <p>&copy; 2024 Abdullah Ansari. All rights reserved. | <a href="mailto:a.ansariprofessional@gmail.com">Contact Me</a></p>
     </footer>
-
-    <!-- Modal Structure -->
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="modal" id="modal">
-        <div class="modal-header">
-            <h2>Let's talk</h2>
-            <button id="close-modal">&times;</button>
-        </div>
-        <div class="modal-content">
-            <video id="loom-video" controls>
-                <source src="loom video (2).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            setTimeout(() => {
-                const modal = document.getElementById('modal');
-                const overlay = document.getElementById('modal-overlay');
-                modal.style.display = 'block';
-                overlay.style.display = 'block';
-            }, 12000); // 12 seconds
-
-            document.getElementById('close-modal').onclick = function() {
-                const modal = document.getElementById('modal');
-                const overlay = document.getElementById('modal-overlay');
-                modal.style.display = 'none';
-                overlay.style.display = 'none';
-            };
-
-            document.getElementById('modal-overlay').onclick = function() {
-                const modal = document.getElementById('modal');
-                const overlay = document.getElementById('modal-overlay');
-                modal.style.display = 'none';
-                overlay.style.display = 'none';
-            };
-        };
-    </script>
 </body>
 </html>
